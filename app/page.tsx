@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 
 type MediaItem = {
@@ -11,15 +12,22 @@ type MediaItem = {
 }
 
 export default function HomePage() {
+  const router = useRouter()
+
   const [mediaList, setMediaList] = useState<MediaItem[]>([])
   const [current, setCurrent] = useState<MediaItem | null>(null)
+
+  // 检查登录
+  useEffect(() => {
+    checkUser()
+  }, [])
 
   // 获取媒体
   useEffect(() => {
     fetchMedia()
   }, [])
 
-  // 随机切换
+  // 随机切换背景
   useEffect(() => {
     if (!mediaList.length) return
 
@@ -41,6 +49,18 @@ export default function HomePage() {
     }
   }, [mediaList, current])
 
+  // 检查用户是否登录
+  const checkUser = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+
+    if (!user) {
+      router.push('/login')
+    }
+  }
+
+  // 获取媒体
   const fetchMedia = async () => {
     const { data } = await supabase
       .from('media')
@@ -51,7 +71,7 @@ export default function HomePage() {
     }
   }
 
-  // 扭蛋随机跳转
+  // 随机跳转
   const handleRandomJump = () => {
     if (!mediaList.length) return
 
@@ -63,7 +83,7 @@ export default function HomePage() {
 
   return (
     <main className="relative h-screen overflow-hidden bg-black text-white">
-      
+
       {/* 背景 */}
       <div className="absolute inset-0">
         {current?.media_type === 'image' ? (
