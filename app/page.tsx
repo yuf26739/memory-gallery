@@ -191,7 +191,7 @@ export default function HomePage() {
               flex
               items-center
               justify-center
-              text-2xl
+              text-4xl
               font-bold
             "
           >
