@@ -125,7 +125,7 @@ export default function LoginPage() {
               mb-4
             "
           >
-            cicicuicui的相册
+            cici&cuicui
           </h1>
 
           {/* 副标题 */}
