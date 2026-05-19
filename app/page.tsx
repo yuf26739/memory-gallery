@@ -89,7 +89,8 @@ export default function HomePage() {
       <div className="absolute inset-0">
         {current?.media_type === 'image' ? (
           <img
-            src={current.media_url}
+            src={current?.media_url}
+            alt=""
             className="
               w-full
               h-full
