@@ -16,6 +16,7 @@ export default function HomePage() {
 
   const [mediaList, setMediaList] = useState<MediaItem[]>([])
   const [current, setCurrent] = useState<MediaItem | null>(null)
+  const [showInfo, setShowInfo] = useState(false)
 
   // 检查登录
   useEffect(() => {
@@ -88,7 +89,8 @@ export default function HomePage() {
       <div className="absolute inset-0">
         {current?.media_type === 'image' ? (
           <img
-            src={current.media_url}
+            src={current?.media_url}
+            alt=""
             className="
               w-full
               h-full
@@ -127,6 +129,30 @@ export default function HomePage() {
         {/* 黑色遮罩 */}
         <div className="absolute inset-0 bg-black/40" />
       </div>
+
+      {/* i按钮 */}
+      <button
+        onClick={() => setShowInfo(true)}
+        className="
+          fixed
+          top-5
+          right-5
+          z-30
+          w-10
+          h-10
+          rounded-full
+          bg-white/10
+          backdrop-blur-xl
+          border
+          border-white/20
+          text-white
+          text-lg
+          hover:bg-white/20
+          transition
+        "
+      >
+        i
+      </button>
 
       {/* 中间内容 */}
       <div
@@ -241,6 +267,107 @@ export default function HomePage() {
       >
         相册库
       </Link>
+
+      {/* 信息弹窗 */}
+      {showInfo && (
+        <div
+          className="
+            fixed
+            inset-0
+            z-50
+            bg-black/60
+            backdrop-blur-md
+            flex
+            items-center
+            justify-center
+            p-6
+          "
+        >
+          <div
+            className="
+              relative
+              w-full
+              max-w-2xl
+              max-h-[90vh]
+              overflow-y-auto
+              rounded-3xl
+              bg-white/10
+              backdrop-blur-2xl
+              border
+              border-white/20
+              p-8
+              text-white
+            "
+          >
+            {/* 关闭按钮 */}
+            <button
+              onClick={() => setShowInfo(false)}
+              className="
+                absolute
+                top-5
+                right-5
+                text-white/60
+                hover:text-white
+                text-xl
+              "
+            >
+              ✕
+            </button>
+
+            <h1 className="text-3xl font-light mb-8 tracking-wide">
+              关于这里
+            </h1>
+
+            <div className="space-y-6 text-white/80 leading-8 text-[15px]">
+              <p>
+                这个网站不是普通的相册。
+              </p>
+
+              <p>
+                它更像一个保存时间的地方。
+              </p>
+
+              <p>
+                每一张照片、每一个视频，
+                都是某个瞬间真实存在过的证明。
+              </p>
+
+              <p>
+                我害怕遗忘，
+                所以我想把这些记忆留在这里。
+              </p>
+
+              <div className="pt-8 border-t border-white/10">
+                <h2 className="text-2xl mb-6 text-white">
+                  To cici
+                </h2>
+
+                <div className="space-y-5">
+                  <p>
+                    如果未来有一天，
+                    我们已经老去，可能忘却。
+                  </p>
+
+                  <p>
+                    我希望这个网站还能记得，
+                    我们曾经一起经历过的那些时刻。
+                  </p>
+
+                  <p>
+                    或许在某个深夜，
+                    还有人会点开这里，
+                    看见我们真实存在过。
+                  </p>
+
+                  <p className="pt-4 text-white/60">
+                    —— cc
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
