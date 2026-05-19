@@ -93,7 +93,7 @@ export default function HomePage() {
               w-full
               h-full
               object-cover
-              blur-2xl
+              blur-md
               scale-110
               opacity-50
               transition-all
