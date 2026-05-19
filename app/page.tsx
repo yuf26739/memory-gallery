@@ -150,7 +150,7 @@ export default function HomePage() {
             mb-10
           "
         >
-          史诗雷霆秘密相册
+          cici & cc的相册
         </h1>
 
         {/* 扭蛋按钮 */}
@@ -195,7 +195,7 @@ export default function HomePage() {
               font-bold
             "
           >
-            戳他打开
+            扭蛋
           </div>
         </button>
       </div>
