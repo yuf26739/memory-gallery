@@ -317,11 +317,11 @@ export default function HomePage() {
               关于这里
             </h1>
 
-            <div className="space-y-6 text-white/80 leading-8 text-[15px]"
+            <div className="space-y-6 text-white/80 leading-8 text-[15px]">
               <p>
                 这个网站不是普通的相册。
               </p>
-              
+
               <p>
                 它更像一个保存时间的地方。
               </p>
