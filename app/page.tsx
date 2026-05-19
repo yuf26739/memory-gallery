@@ -314,14 +314,14 @@ export default function HomePage() {
             </button>
 
             <h1 className="text-3xl font-light mb-8 tracking-wide">
-              About This Place
+              关于这里
             </h1>
 
-            <div className="space-y-6 text-white/80 leading-8 text-[15px]">
+            <div className="space-y-6 text-white/80 leading-8 text-[15px]"
               <p>
                 这个网站不是普通的相册。
               </p>
-
+              
               <p>
                 它更像一个保存时间的地方。
               </p>
@@ -338,13 +338,13 @@ export default function HomePage() {
 
               <div className="pt-8 border-t border-white/10">
                 <h2 className="text-2xl mb-6 text-white">
-                  To Cici
+                  To cici
                 </h2>
 
                 <div className="space-y-5">
                   <p>
                     如果未来有一天，
-                    我们已经不在彼此身边了。
+                    我们已经老去，可能忘却。
                   </p>
 
                   <p>
@@ -353,8 +353,8 @@ export default function HomePage() {
                   </p>
 
                   <p>
-                    至少在某个深夜，
-                    还有人能点开这里，
+                    或许在某个深夜，
+                    还有人会点开这里，
                     看见我们真实存在过。
                   </p>
 
