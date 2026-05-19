@@ -119,13 +119,13 @@ export default function LoginPage() {
           {/* 标题 */}
           <h1
             className="
-              text-5xl
+              text-4xl
               font-black
               tracking-[0.2em]
               mb-4
             "
           >
-            cici&cuicui
+            cici&cc
           </h1>
 
           {/* 副标题 */}
